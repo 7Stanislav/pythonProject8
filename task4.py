@@ -38,3 +38,20 @@
 и достучаться до списка, который и нужно пополнять
 а потом сохранять все в файл
 """
+
+import json
+
+WRITE_ORDER_TO_JSON = {
+    "item": "    printer",
+    "quantity": "    10",
+    "price": "    6700",
+    "buyer": "    Ivanov I.I.",
+    "date": "    08.02.2023"
+    }
+
+
+with open('orders.json', 'w') as f_n:
+    f_n.write(json.dumps(WRITE_ORDER_TO_JSON, indent=4))
+
+with open('orders.json') as f_n:
+    print(f_n.read())
